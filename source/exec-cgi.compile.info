@@ -1,0 +1,3 @@
+--exe exec-cgi
+--use-path=source
+--use-project=xyo.static
