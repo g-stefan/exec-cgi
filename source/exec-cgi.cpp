@@ -15,7 +15,7 @@
 #include "exec-cgi-copyright.hpp"
 #include "exec-cgi-license.hpp"
 
-char script[16384];
+char script[8192];
 char php[16384];
 char env[32000];
 char *query;
@@ -94,5 +94,4 @@ int main(int cmd, char *cmds[]) {
 	};
 	return system(php);
 };
-
 
