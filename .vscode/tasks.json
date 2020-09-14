@@ -1,0 +1,24 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build",
+			"type": "shell",
+			"windows": {
+				"command": "cmd.exe /c build.msvc.cmd",
+			},
+			"liux": {
+				"command": "/bin/sh -- build.ubuntu.sh",
+			}
+			"problemMatcher": [
+				"$msCompile", "$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
