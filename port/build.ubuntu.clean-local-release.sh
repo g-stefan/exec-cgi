@@ -3,7 +3,6 @@
 # http://unlicense.org/
 # Created by Grigore Stefan <g_stefan@yahoo.com>
 
-echo "-> clean exec-cgi"
+echo "-> clean-local-release exec-cgi"
 
-rm -rf bin
-rm -rf build
+rm -rf release

@@ -5,6 +5,7 @@
 
 export XYO_PATH_REPOSITORY=$HOME/SDK/Repository
 export XYO_PATH_RELEASE=$HOME/SDK/Release
+export XYO_PATH_REPOSITORY_LIBRARY=
 
 /bin/sh -- ./port/build.ubuntu.sh $1
 RETV=$?

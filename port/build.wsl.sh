@@ -5,8 +5,10 @@
 
 # On WSL we must build on home folder to keep executable bits on files
 WSL_BUILD_PROCESS_PATH=$HOME/SDK/exec-cgi
+
 export XYO_PATH_REPOSITORY=$HOME/SDK/Repository
 export XYO_PATH_RELEASE=$HOME/SDK/Release
+export XYO_PATH_REPOSITORY_LIBRARY=
 
 [ -d $WSL_BUILD_PROCESS_PATH ] || mkdir -p $WSL_BUILD_PROCESS_PATH
 
