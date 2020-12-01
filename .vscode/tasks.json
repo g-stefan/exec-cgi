@@ -7,10 +7,10 @@
 			"label": "Build",
 			"type": "shell",
 			"windows": {
-				"command": "cmd.exe /c build.msvc.cmd",
+				"command": "cmd.exe /c build.cmd",
 			},
-			"liux": {
-				"command": "/bin/sh -- build.ubuntu.sh",
+			"linux": {
+				"command": "/bin/sh -- build.sh",
 			}
 			"problemMatcher": [
 				"$msCompile", "$gcc"
@@ -19,6 +19,58 @@
 				"kind": "build",
 				"isDefault": true
 			}
+		},
+		{
+			"label": "Analyze",
+			"type": "shell",
+			"windows": {
+				"command": "cmd.exe /c build.cmd analyze",
+			},
+			"linux": {
+				"command": "/bin/sh -- build.sh analyze",
+			}
+			"problemMatcher": [
+				"$msCompile", "$gcc"
+			]
+		},
+		{
+			"label": "Clean",
+			"type": "shell",
+			"windows": {
+				"command": "cmd.exe /c build.cmd clean",
+			},
+			"linux": {
+				"command": "/bin/sh -- build.sh clean",
+			}
+			"problemMatcher": [
+				"$msCompile", "$gcc"
+			]
+		},
+		{
+			"label": "Install",
+			"type": "shell",
+			"windows": {
+				"command": "cmd.exe /c build.cmd install",
+			},
+			"linux": {
+				"command": "/bin/sh -- build.sh install",
+			}
+			"problemMatcher": [
+				"$msCompile", "$gcc"
+			]
+		},
+		{
+			"label": "Version",
+			"type": "shell",
+			"windows": {
+				"command": "cmd.exe /c build.cmd version",
+			},
+			"linux": {
+				"command": "/bin/sh -- build.sh version",
+			}
+			"problemMatcher": [
+				"$msCompile", "$gcc"
+			]
 		}
 	]
 }

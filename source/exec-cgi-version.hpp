@@ -10,10 +10,10 @@
 #ifndef EXEC_CGI_VERSION_HPP
 #define EXEC_CGI_VERSION_HPP
 
-#define EXEC_CGI_VERSION_ABCD                1,3,0,5
+#define EXEC_CGI_VERSION_ABCD                1,3,0,6
 #define EXEC_CGI_VERSION_STR                 "1.3.0"
-#define EXEC_CGI_VERSION_STR_BUILD           "5"
-#define EXEC_CGI_VERSION_STR_DATETIME        "2020-09-21 17:40:06"
+#define EXEC_CGI_VERSION_STR_BUILD           "6"
+#define EXEC_CGI_VERSION_STR_DATETIME        "2020-12-01 20:59:14"
 
 #ifndef XYO_RC
 
