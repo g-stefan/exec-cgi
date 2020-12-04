@@ -5,7 +5,7 @@ rem Created by Grigore Stefan <g_stefan@yahoo.com>
 
 SETLOCAL ENABLEDELAYEDEXPANSION
 
-echo -^> git-release exec-cgi
+echo -^> github-release exec-cgi
 
 if not exist release\ echo Error - no release & exit 1
 

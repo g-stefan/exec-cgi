@@ -5,7 +5,7 @@ rem Created by Grigore Stefan <g_stefan@yahoo.com>
 
 SETLOCAL ENABLEDELAYEDEXPANSION
 
-echo -^> git-release-check exec-cgi
+echo -^> github-release-check exec-cgi
 
 set PROJECT=exec-cgi
 if not exist source\%PROJECT%.version.ini echo Error - no version & exit 1
