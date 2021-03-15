@@ -13,4 +13,4 @@ cmdX(){
 	fi
 }
 
-cmdX scan-build ./port/build.ubuntu.make.sh
+cmdX scan-build ./build/ubuntu.make.sh

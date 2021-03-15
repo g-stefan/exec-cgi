@@ -3,8 +3,8 @@
 # http://unlicense.org/
 # Created by Grigore Stefan <g_stefan@yahoo.com>
 
-if [ -f ./port/build.ubuntu.config.sh ]; then
-	. ./port/build.ubuntu.config.sh
+if [ -f ./build/ubuntu.config.sh ]; then
+	. ./build/ubuntu.config.sh
 fi
 
 RESTORE_PATH=$PATH
@@ -31,9 +31,17 @@ fi
 PATH=$XYO_PATH_REPOSITORY/bin:$PATH
 LD_LIBRARY_PATH=$XYO_PATH_REPOSITORY/bin:$LD_LIBRARY_PATH
 
-if [ -d "bin" ]; then
+if [ -d "output" ]; then
 	POPD=$PWD
-	cd bin
+	cd output
+	PATH=$PWD:$PATH
+	LD_LIBRARY_PATH=$PWD:$LD_LIBRARY_PATH
+	cd $POPD
+fi
+
+if [ -d "output/bin" ]; then
+	POPD=$PWD
+	cd output/bin
 	PATH=$PWD:$PATH
 	LD_LIBRARY_PATH=$PWD:$LD_LIBRARY_PATH
 	cd $POPD
@@ -46,12 +54,12 @@ export XYO_PATH_RELEASE
 RETV=0
 
 if [ "$1" = "" ]; then
-	. ./port/build.ubuntu.make.sh make
+	. ./build/ubuntu.make.sh make
 else
-	if [ -f "./port/build.ubuntu.$1.sh" ]; then
-		. ./port/build.ubuntu.$1.sh
+	if [ -f "./build/ubuntu.$1.sh" ]; then
+		. ./build/ubuntu.$1.sh
 	else
-		. ./port/build.ubuntu.make.sh $1
+		. ./build/ubuntu.make.sh $1
 	fi
 fi
 

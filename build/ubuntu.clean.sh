@@ -5,5 +5,5 @@
 
 echo "-> clean exec-cgi"
 
-rm -rf bin
-rm -rf build
+rm -rf output
+rm -rf temp

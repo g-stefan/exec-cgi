@@ -17,4 +17,4 @@ cmdX(){
 	fi
 }
 
-cmdX xyo-cc --mode=$ACTION @source/exec-cgi.compile
+cmdX xyo-cc --mode=$ACTION @build/source/exec-cgi.compile
