@@ -8,7 +8,7 @@ if [ "$ACTION" = "" ]; then
 	ACTION=make
 fi
 
-echo "-> $ACTION exec-cgi"
+echo "- $BUILD_PROJECT > $ACTION"
 
 cmdX(){
 	if ! "$@" ; then
