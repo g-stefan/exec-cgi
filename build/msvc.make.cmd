@@ -6,7 +6,7 @@ rem Created by Grigore Stefan <g_stefan@yahoo.com>
 set ACTION=%1
 if "%1" == "" set ACTION=make
 
-echo - %BUILD_PROJECT% ^> %1
+echo - %BUILD_PROJECT% ^> %ACTION%
 
 goto cmdXDefined
 :cmdX
@@ -19,3 +19,4 @@ exit 1
 :cmdXDefined
 
 call :cmdX xyo-cc --mode=%ACTION% @build/source/exec-cgi.compile
+call :cmdX xyo-cc --mode=%ACTION% @build/source/exec-cgi.library.compile

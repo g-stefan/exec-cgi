@@ -18,3 +18,4 @@ cmdX(){
 }
 
 cmdX xyo-cc --mode=$ACTION @build/source/exec-cgi.compile
+cmdX xyo-cc --mode=$ACTION @build/source/exec-cgi.library.compile
