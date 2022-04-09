@@ -16,12 +16,11 @@ namespace ExecCGI {
 
 	using namespace XYO;
 
-	class Application :
-		public virtual IMain {
+	class Application : public virtual IMain {
 			XYO_DISALLOW_COPY_ASSIGN_MOVE(Application);
-		public:
 
-			inline Application() {};
+		public:
+			inline Application(){};
 
 			void showUsage();
 			void showLicense();
@@ -33,4 +32,3 @@ namespace ExecCGI {
 };
 
 #endif
-

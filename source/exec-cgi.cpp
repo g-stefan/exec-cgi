@@ -17,7 +17,7 @@
 #include "exec-cgi-copyright.hpp"
 #include "exec-cgi-license.hpp"
 #ifndef EXEC_CGI_NO_VERSION
-#       include "exec-cgi-version.hpp"
+#	include "exec-cgi-version.hpp"
 #endif
 
 using namespace XYO;
@@ -50,7 +50,6 @@ namespace ExecCGI {
 #endif
 	};
 
-
 	int Application::main(int cmdN, char *cmdS[]) {
 		char script[16384];
 		char php[16384];
@@ -61,91 +60,90 @@ namespace ExecCGI {
 
 		int k;
 
-		if(cmdN < 3) {
+		if (cmdN < 3) {
 
-			if(cmdN == 2) {
-				if(strcmp(cmdS[1], "--usage") == 0) {
+			if (cmdN == 2) {
+				if (strcmp(cmdS[1], "--usage") == 0) {
 					showUsage();
 					return 0;
 				};
-				if(strcmp(cmdS[1], "--license") == 0) {
+				if (strcmp(cmdS[1], "--license") == 0) {
 					showLicense();
 					return 0;
 				};
-				if(strcmp(cmdS[1], "--version") == 0) {
+				if (strcmp(cmdS[1], "--version") == 0) {
 					showVersion();
 					return 0;
 				};
 			};
-
 		};
 
-		if(cmdN < 2) {
+		if (cmdN < 2) {
 			showUsage();
 			return 2;
 		};
 
-		for(k = 0; cmdS[1][k] != 0; ++k) {
-			if(cmdS[1][k] == '?') {
+		for (k = 0; cmdS[1][k] != 0; ++k) {
+			if (cmdS[1][k] == '?') {
 				break;
 			};
 		};
 		strncpy(script, cmdS[1], k);
-		if(cmdS[1][k] == '?') {
+		if (cmdS[1][k] == '?') {
 			query = &cmdS[1][k + 1];
 		} else {
 			query = &cmdS[1][k];
 		};
 
 		strcpy(env, "SERVER_SOFTWARE=exec-cgi");
-		if(!putenv(env)) {
+		if (!putenv(env)) {
 			return 1;
 		};
 		strcpy(env, "SERVER_NAME=exec-cgi");
-		if(!putenv(env)) {
+		if (!putenv(env)) {
 			return 1;
 		};
 		strcpy(env, "GATEWAY_INTERFACE=CGI/1.1");
-		if(!putenv(env)) {
+		if (!putenv(env)) {
 			return 1;
 		};
 		strcpy(env, "HTTP_REDIRECT_STATUS=On");
-		if(!putenv(env)) {
+		if (!putenv(env)) {
 			return 1;
 		};
 		strcpy(env, "REMOTE_ADDR=127.0.0.1");
-		if(!putenv(env)) {
+		if (!putenv(env)) {
 			return 1;
 		};
 		strcpy(env, "REMOTE_HOST=localhost");
-		if(!putenv(env)) {
+		if (!putenv(env)) {
 			return 1;
 		};
 		strcpy(env, "REQUEST_METHOD=GET");
-		if(!putenv(env)) {
+		if (!putenv(env)) {
 			return 1;
 		};
 		sprintf(env, "SERVER_REQUEST_URI=%s", cmdS[1]);
-		if(!putenv(env)) {
+		if (!putenv(env)) {
 			return 1;
 		};
 		sprintf(env, "QUERY_STRING=%s", query);
-		if(!putenv(env)) {
+		if (!putenv(env)) {
 			return 1;
 		};
 		sprintf(env, "PATH_INFO=%s", script);
-		if(!putenv(env)) {
+		if (!putenv(env)) {
 			return 1;
 		};
 		sprintf(env, "SCRIPT_NAME=%s", script);
-		if(!putenv(env)) {
+		if (!putenv(env)) {
 			return 1;
 		};
 		sprintf(env, "PATH_TRANSLATED=%s", script);
-		if(!putenv(env)) {
+		if (!putenv(env)) {
 			return 1;
 		};
-		if(cmdN >= 3) {
+		if (cmdN >= 3) {
 			sprintf(php, "php-cgi -q -n -d -f %s>%s", script, cmdS[2]);
 		} else {
 			sprintf(php, "php-cgi -q -n -d -f %s", script);

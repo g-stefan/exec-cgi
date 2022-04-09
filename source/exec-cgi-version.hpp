@@ -10,10 +10,10 @@
 #ifndef EXEC_CGI_VERSION_HPP
 #define EXEC_CGI_VERSION_HPP
 
-#define EXEC_CGI_VERSION_ABCD                1,12,0,30
-#define EXEC_CGI_VERSION_STR                 "1.12.0"
-#define EXEC_CGI_VERSION_STR_BUILD           "30"
-#define EXEC_CGI_VERSION_STR_DATETIME        "2022-01-09 01:13:07"
+#define EXEC_CGI_VERSION_ABCD 1,13,0,34
+#define EXEC_CGI_VERSION_STR "1.13.0"
+#define EXEC_CGI_VERSION_STR_BUILD "34"
+#define EXEC_CGI_VERSION_STR_DATETIME "2022-04-04 01:44:51"
 
 #ifndef XYO_RC
 
@@ -28,4 +28,3 @@ namespace ExecCGI {
 
 #endif
 #endif
-

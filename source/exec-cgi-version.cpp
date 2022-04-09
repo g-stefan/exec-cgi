@@ -12,10 +12,10 @@
 namespace ExecCGI {
 	namespace Version {
 
-		static const char *version_ = "1.12.0";
-		static const char *build_ = "30";
-		static const char *versionWithBuild_ = "1.12.0.30";
-		static const char *datetime_ = "2022-01-09 01:13:07";
+		static const char *version_ = "1.13.0";
+		static const char *build_ = "34";
+		static const char *versionWithBuild_ = "1.13.0.34";
+		static const char *datetime_ = "2022-04-04 01:44:51";
 
 		const char *version() {
 			return version_;
@@ -32,4 +32,3 @@ namespace ExecCGI {
 
 	};
 };
-

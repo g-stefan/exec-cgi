@@ -10,11 +10,11 @@
 #ifndef EXEC_CGI_COPYRIGHT_HPP
 #define EXEC_CGI_COPYRIGHT_HPP
 
-#define EXEC_CGI_COPYRIGHT            "Copyright (c) Grigore Stefan"
-#define EXEC_CGI_PUBLISHER            "Grigore Stefan"
-#define EXEC_CGI_COMPANY              EXEC_CGI_PUBLISHER
-#define EXEC_CGI_CONTACT              "g_stefan@yahoo.com"
-#define EXEC_CGI_FULL_COPYRIGHT       EXEC_CGI_COPYRIGHT " <" EXEC_CGI_CONTACT ">"
+#define EXEC_CGI_COPYRIGHT "Copyright (c) Grigore Stefan"
+#define EXEC_CGI_PUBLISHER "Grigore Stefan"
+#define EXEC_CGI_COMPANY EXEC_CGI_PUBLISHER
+#define EXEC_CGI_CONTACT "g_stefan@yahoo.com"
+#define EXEC_CGI_FULL_COPYRIGHT EXEC_CGI_COPYRIGHT " <" EXEC_CGI_CONTACT ">"
 
 #ifndef XYO_RC
 
