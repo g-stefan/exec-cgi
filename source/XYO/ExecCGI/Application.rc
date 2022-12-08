@@ -1,0 +1,13 @@
+// Exec CGI
+// Copyright (c) 2022 Grigore Stefan <g_stefan@yahoo.com>
+// MIT License (MIT) <http://opensource.org/licenses/MIT>
+// SPDX-FileCopyrightText: 2022 Grigore Stefan <g_stefan@yahoo.com>
+// SPDX-License-Identifier: MIT
+
+#include <XYO/ExecCGI/Application.rh>
+#include <XYO/ExecCGI/Copyright.rh>
+#include <XYO/ExecCGI/Version.rh>
+
+1  ICON "Application.ico"
+
+XYO_APPLICATION_VERSION_INFO(XYO_EXECCGI,"exec-cgi.exe","Execute php script as cgi")

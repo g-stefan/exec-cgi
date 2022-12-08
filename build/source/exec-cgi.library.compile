@@ -1,7 +1,0 @@
---lib exec-cgi
---def=EXEC_CGI_LIBRARY
---src-hpp=source/exec-cgi.hpp
---build-include
---no-default-include
---install-include-direct
---use-project=xyo.static

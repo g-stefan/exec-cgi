@@ -1,0 +1,13 @@
+{
+	"project": {
+		"name":"exec-cgi",
+		"type":"xyo-cpp",
+		"make" : "exe.static",
+		"SPDX-License-Identifier": "MIT",
+		"sourcePath" : "XYO/ExecCGI",
+		"outputPath" : "output",
+		"dependency" : [
+			"xyo-system"
+		]
+	}
+}
