@@ -7,10 +7,9 @@
 #ifndef XYO_EXECCGI_COPYRIGHT_RH
 #define XYO_EXECCGI_COPYRIGHT_RH
 
-#define XYO_EXECCGI_COPYRIGHT "Copyright (c) 2022 Grigore Stefan"
+#define XYO_EXECCGI_COPYRIGHT "Copyright (c) 2022 Grigore Stefan <g_stefan@yahoo.com>"
 #define XYO_EXECCGI_PUBLISHER "Grigore Stefan"
 #define XYO_EXECCGI_COMPANY XYO_EXECCGI_PUBLISHER
 #define XYO_EXECCGI_CONTACT "g_stefan@yahoo.com"
-#define XYO_EXECCGI_FULL_COPYRIGHT XYO_EXECCGI_COPYRIGHT " <" XYO_EXECCGI_CONTACT ">"
 
 #endif

@@ -14,7 +14,7 @@ namespace XYO::ExecCGI {
 	void Application::showUsage() {
 		printf("exec-cgi - execute php script as cgi\n");
 		showVersion();
-		printf("%s\n\n", ExecCGI::Copyright::fullCopyright());
+		printf("%s\n\n", ExecCGI::Copyright::copyright());
 		printf("\n");
 
 		printf("Usage:\n\n");
@@ -27,8 +27,8 @@ namespace XYO::ExecCGI {
 		printf("\texec-cgi \"foo.php?a=foo&b=5\" foo.html\n");
 	};
 
-	void Application::showLicense() {		
-		printf("%s%s", ExecCGI::License::licenseHeader(), ExecCGI::License::licenseBody());		
+	void Application::showLicense() {
+		printf("%s", ExecCGI::License::license());
 	};
 
 	void Application::showVersion() {

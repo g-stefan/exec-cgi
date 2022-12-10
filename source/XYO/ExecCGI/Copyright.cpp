@@ -13,7 +13,6 @@ namespace XYO::ExecCGI::Copyright {
 	static const char *publisher_ = XYO_EXECCGI_PUBLISHER;
 	static const char *company_ = XYO_EXECCGI_COMPANY;
 	static const char *contact_ = XYO_EXECCGI_CONTACT;
-	static const char *fullCopyright_ = XYO_EXECCGI_FULL_COPYRIGHT;
 
 	const char *copyright() {
 		return copyright_;
@@ -29,10 +28,6 @@ namespace XYO::ExecCGI::Copyright {
 
 	const char *contact() {
 		return contact_;
-	};
-
-	const char *fullCopyright() {
-		return fullCopyright_;
 	};
 
 };
