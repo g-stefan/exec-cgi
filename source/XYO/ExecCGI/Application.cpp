@@ -42,8 +42,8 @@ namespace XYO::ExecCGI {
 	};
 
 	int Application::main(int cmdN, char *cmdS[]) {
-		char script[16384];
-		char php[16384];
+		char script[2048];
+		char php[2048];
 		char env[16384];
 		char *query;
 		FILE *in;
