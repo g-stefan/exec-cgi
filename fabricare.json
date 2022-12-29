@@ -8,6 +8,8 @@
 		"outputPath" : "output",
 		"dependency" : [
 			"xyo-system"
-		]
+		],
+		"hasRelease" : true,
+		"githubRelease" : true
 	}
 }
