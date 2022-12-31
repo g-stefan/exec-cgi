@@ -5,11 +5,11 @@
 		"make" : "exe.static",
 		"SPDX-License-Identifier": "MIT",
 		"sourcePath" : "XYO/ExecCGI",
-		"outputPath" : "output",
 		"dependency" : [
 			"xyo-system"
 		],
 		"hasRelease" : true,
-		"githubRelease" : true
+		"githubRelease" : true,
+		"releaseDev" : false
 	}
 }
