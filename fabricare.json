@@ -1,15 +1,19 @@
 {
-	"project": {
-		"name":"exec-cgi",
-		"type":"xyo-cpp",
-		"make" : "exe.static",
-		"SPDX-License-Identifier": "MIT",
-		"sourcePath" : "XYO/ExecCGI",
-		"dependency" : [
-			"xyo-system"
+	"solution": {
+		"name" : "exec-cgi",
+		"type" : "xyo-cpp",
+		"projects": [
+			{
+				"name" : "exec-cgi",
+				"make" : "exe.static",
+				"SPDX-License-Identifier": "MIT",
+				"sourcePath" : "XYO/ExecCGI",
+				"dependency" : [
+					"xyo-system"
+				]
+			}
 		],
-		"hasRelease" : true,
-		"githubRelease" : true,
+		"hasGithub" : true,
 		"releaseDev" : false
 	}
 }
