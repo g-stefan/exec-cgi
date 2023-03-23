@@ -12,10 +12,10 @@
 #endif
 
 namespace XYO::ExecCGI::Copyright {
-	std::string copyright();
-	std::string publisher();
-	std::string company();
-	std::string contact();
+	const char *copyright();
+	const char *publisher();
+	const char *company();
+	const char *contact();
 };
 
 #endif
