@@ -18,6 +18,7 @@ namespace XYO::ExecCGI {
 		printf("\n");
 
 		printf("Usage:\n\n");
+		printf("\texec-cgi --help\n");
 		printf("\texec-cgi --usage\n");
 		printf("\texec-cgi --license\n");
 		printf("\texec-cgi --version\n");
@@ -54,6 +55,10 @@ namespace XYO::ExecCGI {
 		if (cmdN < 3) {
 
 			if (cmdN == 2) {
+				if (strcmp(cmdS[1], "--help") == 0) {
+					showUsage();
+					return 0;
+				};
 				if (strcmp(cmdS[1], "--usage") == 0) {
 					showUsage();
 					return 0;
