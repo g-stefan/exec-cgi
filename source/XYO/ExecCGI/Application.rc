@@ -10,5 +10,5 @@
 
 1  ICON "Application.ico"
 
-XYO_APPLICATION_VERSION_INFO(XYO_EXECCGI,"exec-cgi.exe","Execute php script as cgi")
-XYO_APPLICATION_MANIFEST("Application.manifest")
+XYO_PLATFORM_VERSION_INFO(XYO_EXECCGI,"exec-cgi.exe","Execute php script as cgi")
+XYO_PLATFORM_MANIFEST("Application.manifest")
