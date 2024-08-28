@@ -5,7 +5,7 @@
 		"projects": [
 			{
 				"name" : "exec-cgi",
-				"make" : "exe.static",
+				"make" : "exe",
 				"SPDX-License-Identifier": "MIT",
 				"sourcePath" : "XYO/ExecCGI",
 				"dependency" : [
