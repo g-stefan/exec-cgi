@@ -1,5 +1,6 @@
 {
 	"solution": {
+		"namespace" : "xyo",
 		"name" : "exec-cgi",
 		"type" : "xyo-cpp",
 		"projects": [

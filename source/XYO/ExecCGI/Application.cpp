@@ -43,14 +43,10 @@ namespace XYO::ExecCGI {
 	};
 
 	int Application::main(int cmdN, char *cmdS[]) {
-		char script[2048];
-		char php[2176];
-		char env[16384];
-		char *query;
-		FILE *in;
-		FILE *out;
-
-		int k;
+		String request;
+		String script;
+		String query;
+		String cmdLine;
 
 		if (cmdN < 3) {
 
@@ -79,72 +75,56 @@ namespace XYO::ExecCGI {
 			return 2;
 		};
 
-		for (k = 0; cmdS[1][k] != 0; ++k) {
-			if (cmdS[1][k] == '?') {
-				break;
-			};
+		request = cmdS[1];
+		request.split2("?", script, query);
+
+		// Shell::setenv copies the value and returns true on success,
+		// C putenv returns 0 on success and on Linux keeps the pointer
+		if (!Shell::setenv("SERVER_SOFTWARE", "exec-cgi")) {
+			return 1;
 		};
-		strncpy(script, cmdS[1], k);
-		if (cmdS[1][k] == '?') {
-			query = &cmdS[1][k + 1];
-		} else {
-			query = &cmdS[1][k];
+		if (!Shell::setenv("SERVER_NAME", "exec-cgi")) {
+			return 1;
+		};
+		if (!Shell::setenv("GATEWAY_INTERFACE", "CGI/1.1")) {
+			return 1;
+		};
+		// php-cgi refuses to run without it (cgi.force_redirect),
+		// HTTP_REDIRECT_STATUS is ignored since PHP 8.1.30 / 8.2.24 / 8.3.12
+		if (!Shell::setenv("REDIRECT_STATUS", "200")) {
+			return 1;
+		};
+		if (!Shell::setenv("REMOTE_ADDR", "127.0.0.1")) {
+			return 1;
+		};
+		if (!Shell::setenv("REMOTE_HOST", "localhost")) {
+			return 1;
+		};
+		if (!Shell::setenv("REQUEST_METHOD", "GET")) {
+			return 1;
+		};
+		if (!Shell::setenv("SERVER_REQUEST_URI", request)) {
+			return 1;
+		};
+		if (!Shell::setenv("QUERY_STRING", query)) {
+			return 1;
+		};
+		if (!Shell::setenv("PATH_INFO", script)) {
+			return 1;
+		};
+		if (!Shell::setenv("SCRIPT_NAME", script)) {
+			return 1;
+		};
+		if (!Shell::setenv("PATH_TRANSLATED", script)) {
+			return 1;
 		};
 
-		strcpy(env, "SERVER_SOFTWARE=exec-cgi");
-		if (!putenv(env)) {
-			return 1;
-		};
-		strcpy(env, "SERVER_NAME=exec-cgi");
-		if (!putenv(env)) {
-			return 1;
-		};
-		strcpy(env, "GATEWAY_INTERFACE=CGI/1.1");
-		if (!putenv(env)) {
-			return 1;
-		};
-		strcpy(env, "HTTP_REDIRECT_STATUS=On");
-		if (!putenv(env)) {
-			return 1;
-		};
-		strcpy(env, "REMOTE_ADDR=127.0.0.1");
-		if (!putenv(env)) {
-			return 1;
-		};
-		strcpy(env, "REMOTE_HOST=localhost");
-		if (!putenv(env)) {
-			return 1;
-		};
-		strcpy(env, "REQUEST_METHOD=GET");
-		if (!putenv(env)) {
-			return 1;
-		};
-		sprintf(env, "SERVER_REQUEST_URI=%s", cmdS[1]);
-		if (!putenv(env)) {
-			return 1;
-		};
-		sprintf(env, "QUERY_STRING=%s", query);
-		if (!putenv(env)) {
-			return 1;
-		};
-		sprintf(env, "PATH_INFO=%s", script);
-		if (!putenv(env)) {
-			return 1;
-		};
-		sprintf(env, "SCRIPT_NAME=%s", script);
-		if (!putenv(env)) {
-			return 1;
-		};
-		sprintf(env, "PATH_TRANSLATED=%s", script);
-		if (!putenv(env)) {
-			return 1;
-		};
+		cmdLine = "php-cgi -q -n -d -f \"";
+		cmdLine << script << "\"";
 		if (cmdN >= 3) {
-			sprintf(php, "php-cgi -q -n -d -f %s>%s", script, cmdS[2]);
-		} else {
-			sprintf(php, "php-cgi -q -n -d -f %s", script);
+			cmdLine << ">\"" << cmdS[2] << "\"";
 		};
-		return system(php);
+		return Shell::system(cmdLine);
 	};
 };
 
